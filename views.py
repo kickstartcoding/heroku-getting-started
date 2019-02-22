@@ -26,7 +26,7 @@ def about_me(request):
 
 def github_api_example(request):
     # We can also combine Django with APIs
-    response = requests.get('https://api.github.com/users/michaelpb/repos')
+    response = requests.get('https://api.github.com/users/kickstartcoding/repos')
     repos = response.json()
     context = {
         'github_repos': repos,
