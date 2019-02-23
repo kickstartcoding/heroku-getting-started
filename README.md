@@ -25,8 +25,8 @@ Django website.
 # What is Heroku?
 
 
-**Heroku** is a company that will run an HTTP server application for you on
-their servers.
+**Heroku** is a company that will run an HTTP server application for you, and
+expose it to the internet.
 
 They will do the heavy lifting of installing PyPI dependencies and making sure
 the right HTTP requests get to your servers (routing), you in turn need to only
@@ -120,31 +120,31 @@ heroku app, and link your git repo to it.
 can launch! Feel free to `git clone` this repo, and use it as your example
 Django project to launch.
 
-1. Go to the directory of your Django project.
+1. Go to the directory of your project.
+    - Ensure your project has a `Procfile`. If you are using this example
+      Django repo, you will already have a `Procfile`.  This tells Heroku which
+      file is the main "entry point" to your server, in other words, which file
+      to run to kick everything off.
+    - Ensure your Django project has a `Pipfile` (or `requirements.txt`).
+      Again, if you are using this example, you will already have a `Pipfile`.
 
-2. Ensure your Django project has a Procfile (see the
-5.3/activities/minidjango example) - this tells Heroku which file is the
-main "entry point" to your server, in other words, which file to run to
-kick everything off.
+2. *Important:* Your project MUST be in a git repository.
+    - If you `git clone` this repo, then you are good on this front, also.
+    - You can either do this the normal way by going to GitHub and creating a
+      new repo, then cloning that, OR you can use the "git init" command to
+      make a local-only repo. However you do it, Heroku absolutely requires
+      your project to be in a single git repo, such that the `Procfile`,
+      `Pipfile`, and manage.py are all at the "top level" next to `README.md`
+      and `.git`, etc.
 
-3. Ensure your Django project has a Pipfile - again, see the mindjango
-example. If you have been using pipenv, you should be good to go on this
-front.
-
-4. IMPORTANT: Your project MUST be in a git repository. You can either do this
-the normal way by going to GitHub and creating a new repo, then cloning that,
-OR you can use the "git init" command to make a local-only repo. However you do
-it, Heroku absolutely requires your project to be in a single git repo, such
-that the Procfile, Pipfile, and manage.py are all at the "top level" next to
-README.md and .git, etc.
-
-5. Create a new Heroku Application on your account for your project:
+3. Create a new Heroku Application on your account for your project. This
+command should be executed within your git project directory:
 
 ```bash
 heroku create
 ```
 
-6. Ensure that your git repo is now linked to a Heroku remote, in addition to
+4. Ensure that your git repo is now linked to a Heroku remote, in addition to
 GitHub:
 
 ```bash
