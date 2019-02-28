@@ -76,7 +76,7 @@ Either use the Ubuntu Software Center (search for Heroku and click Install), or
 run the following command:
 
 ```bash
-sudo snap install heroku
+sudo snap install --classic heroku
 ```
 
 ### macOS
