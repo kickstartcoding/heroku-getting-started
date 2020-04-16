@@ -122,7 +122,7 @@ project to launch.
 
 > [**Already have a Django project?** If you started it using
 > `django-admin startproject`, then follow this
-> guide instead.](./django_admin_start_project_guide.md)
+> guide instead.](./djangoadmin_startproject.md)
 
 
 ## Creating a new Heroku app
