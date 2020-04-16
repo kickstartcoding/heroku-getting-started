@@ -11,7 +11,7 @@ Django website.
   who want a simple and to-the-point guide on getting Heroku working on their
   system to launch Python websites.
 
-* This guide assumes you already have fundamental Bash knowledge.
+* This guide assumes you already have fundamental Bash and git knowledge.
 
 * This guide *does not* support Windows. It assumes you use either **macOS** or
   **Ubuntu GNU/Linux**.
@@ -52,6 +52,8 @@ according to an agreement with Amazon Web Services.
 * heroku **add-on** - Extra stuff your application needs, such as databases or
   media file services. These might cost money, and might be provided by a third
   party.
+
+
 
 
 # Guide
@@ -110,15 +112,25 @@ Broad concepts:
 * Whenever Heroku receives code from us via a `git push`, they will then try to
   run that code on their servers, and expose it to the world.
 
+
+
+## Python project
+
+For this tutorial, this very repo contains an example Django project you can
+launch!  Go ahead and `git clone` this repo, to use it as your example Django
+project to launch.
+
+> [**Already have a Django project?** If you started it using
+> `django-admin startproject`, then follow this
+> guide instead.](./django_admin_start_project_guide.md)
+
+
 ## Creating a new Heroku app
 
 Every time you want to launch a brand new Python project, you will need to
 create a new Heroku app for it.  These are the steps to both create a new
 heroku app, and link your git repo to it.
 
-**NOTE:** For this tutorial, this repo contains an example Django project you
-can launch! Feel free to `git clone` this repo, and use it as your example
-Django project to launch.
 
 1. Go to the directory of your project.
     - Ensure your project has a `Procfile`. If you are using this example
@@ -162,7 +174,7 @@ git push heroku master
 ```
 
 If it's working, you should see text like "Python app detected", then
-after a 30 seconds or so, something like:
+after a 30 seconds or so, something like this:
 
 ```
 remote: -----> Launching...
