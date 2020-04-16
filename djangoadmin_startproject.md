@@ -17,9 +17,9 @@ web: python manage.py runserver 0.0.0.0:$PORT
 
 3. Heroku requires you that your project is in a git repository in a standard
 way: The `Procfile`, `Pipfile` (or `requirements.txt`), and `manage.py` are all
-at the "top level" next to `README.md` and `.git`, etc.^[Check the location of
-the `.git` directory with `ls -a`.] Refer to the `djtestproj` example project
-if you are uncertain what it should look like.
+at the "top level" next to `README.md` and `.git`, etc.  Check the location of
+the `.git` directory with `ls -a`. Refer to the `djtestproj` example project if
+you are uncertain what it should look like.
 
 4. Allow Django to be served on any domain, by changing the list called
 `ALLOWED_HOSTS` in your `settings.py`, as such:
@@ -28,25 +28,25 @@ if you are uncertain what it should look like.
 ALLOWED_HOSTS = ["*"]
 ```
 
-8. Login to Heroku (should only have to do this once):
+5. Login to Heroku (should only have to do this once):
 
 ```bash
 heroku login
 ```
 
-8. Create a new Heroku Application on your account for your project:
+6. Create a new Heroku Application on your account for your project:
 
 ```
 heroku create
 ```
 
-9. Configure this Heroku app to skip a step which likely will break:
+7. Configure this Heroku app to skip a step which likely will break:
 
 ```bash
 heroku config:set DISABLE_COLLECTSTATIC=1
 ```
 
-10. Do do a git add and git commit. You will have to do this before every launch
+8. Do do a git add and git commit. You will have to do this before every launch
 to Heroku:
 
 ```bash
@@ -54,7 +54,7 @@ git add -A
 git comit -m "your commit note goes here...."
 ```
 
-11. Launch your site on Heroku:
+9. Launch your site on Heroku:
 ```bash
 git push heroku master
 ```
@@ -84,13 +84,14 @@ see your application live for the world to see.
 * If stuff still isn't working, use the `heroku logs` command to see error
   messages.
 
-* Consider using the Heroku online interface to change the app name
-  from the random nonsense name to be something more appropriate.
+* Consider using the Heroku online interface to change the app name from the
+  random nonsense name to be something more appropriate.
+
 
 ## Tip: Postgres on Heroku
 
 By default, Django is set-up to use SQLite. This has a big drawback: Every time
-you push to Heroku, it might clear your data. You may want to choose to use
+you push to Heroku, it will clear your database. You may want to choose to use
 Postgres instead.
 
 
@@ -106,6 +107,7 @@ the similarly random name your app got when you created it.
 
 2. Creating a new Heroku Postgres Database (only need to do this once per
 Heroku):
+
 ```bash
 heroku create # Create a Heroku app (only run this if you haven't already)
 heroku addons:create heroku-postgresql:hobby-dev --app pure-crag-68
@@ -113,6 +115,7 @@ heroku addons:create heroku-postgresql:hobby-dev --app pure-crag-68
 
 3. Confirm that the database is working by connecting to it with the
 command-line client:
+
 ```bash
 heroku pg:psql --app pure-crag-68
 ```
@@ -123,8 +126,9 @@ heroku pg:psql --app pure-crag-68
 * *If you used `django-admin startproject`*, then follow this guide:
   [`devcenter.heroku.com/articles/django-app-configuration`](https://devcenter.heroku.com/articles/django-app-configuration)
 
-* Once Heroku & Django is properly configured for Django, you'll need to run the
-migrations on the remote Postgres database. That can be done as follows:
+* Once Heroku & Django is properly configured for Django, you'll need to run
+  the migrations on the remote Postgres database. That can be done as follows:
+
 ```bash
 heroku run python manage.py migrate
 ```
