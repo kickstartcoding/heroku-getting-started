@@ -4,10 +4,10 @@ url = "https://pypi.python.org/simple"
 name = "pypi"
 
 [packages]
-requests = "2.23.0"
-django = "3.0.5"
+requests = "*"
+django = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "*"
 
 [dev-packages]
