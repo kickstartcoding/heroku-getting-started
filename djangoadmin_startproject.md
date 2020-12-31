@@ -72,20 +72,9 @@ That strange URL "pure-crag-68" will be a different combo of random words and
 numbers for you. Click on that link or copy and paste it into your browser to
 see your application live for the world to see.
 
-
-## More Tips {-}
-
-* To push to GitHub, you will use `git push` as before.
-
-* Going forward, you will only need to repeat repeat step 10 & 11 (`git push
-  heroku master`) to create a new git commit and release it to the world. The
-  rest of the steps you won't have to repeat.
-
-* If stuff still isn't working, use the `heroku logs` command to see error
-  messages.
-
-* Consider using the Heroku online interface to change the app name from the
-  random nonsense name to be something more appropriate.
+While things will be mostly working now, it's using the default SQLite database
+which has many drawbacks and is not intended for "use in production" or use 
+outside of development on your local computer. Check out the
 
 
 ## Tip: Postgres on Heroku
@@ -132,6 +121,22 @@ heroku pg:psql --app pure-crag-68
 ```bash
 heroku run python manage.py migrate
 ```
+
+
+## Tip: Using Heroku
+
+* To push to GitHub, you will use `git push` as before.
+
+* Going forward, you will only need to repeat repeat step 10 & 11 (`git push
+  heroku master`) to create a new git commit and release it to the world. The
+  rest of the steps you won't have to repeat.
+
+* If stuff still isn't working, use the `heroku logs` command to see error
+  messages.
+
+* Consider using the Heroku online interface to change the app name from the
+  random nonsense name to be something more appropriate.
+
 
 
 ----------------------
