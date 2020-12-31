@@ -74,7 +74,7 @@ see your application live for the world to see.
 
 While things will be mostly working now, it's using the default SQLite database
 which has many drawbacks and is not intended for "use in production" or use 
-outside of development on your local computer. Check out the
+outside of development on your local computer. Keep on reading on how to solve this.
 
 
 ## Tip: Postgres on Heroku
