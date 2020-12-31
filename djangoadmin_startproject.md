@@ -86,8 +86,6 @@ Postgres instead.
 
 ### Provisioning on Heroku
 
-*NOTE:* For the these last commands, you will need to change "pure-crag-68" to
-the similarly random name your app got when you created it.
 
 
 1. Local installation (only need to do once)
@@ -108,6 +106,10 @@ command-line client:
 ```bash
 heroku pg:psql --app pure-crag-68
 ```
+
+*Note:* For the these last commands, you will need to change "pure-crag-68" to
+the similarly random name your app got when you created it. Also, use Ctrl+D to
+exit the psql prompt.
 
 
 ### Configuring Django to use Postgres
