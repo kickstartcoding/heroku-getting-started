@@ -16,10 +16,10 @@ Django website.
 * This guide *does not* support Windows. It assumes you use either **macOS** or
   **Ubuntu GNU/Linux**.
 
-> This was original created for Kickstart Coding the affordable
-> and cutting-edge online coding school, HQ'ed in Oakland, CA.
-> [Learn more about our unique "custom-paced" coding bootcamp, covering Python,
-> React JavaScript, and more.](http://kickstartcoding.com/?utm_source=github&utm_campaign=cheatsheets)
+> This was originally created for Kickstart Coding.
+> [Whether you're a beginner or pro, if you liked our Python
+> and React JavaScript tutorials, you might also like our affordable, first-ever
+> "custom-paced" online program, so learn more here!](http://kickstartcoding.com/?utm_source=github&utm_campaign=cheatsheets)
 
 
 # What is Heroku?
