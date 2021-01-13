@@ -51,7 +51,7 @@ to Heroku:
 
 ```bash
 git add -A
-git comit -m "your commit note goes here...."
+git commit -m "your commit note goes here...."
 ```
 
 9. Launch your site on Heroku:
