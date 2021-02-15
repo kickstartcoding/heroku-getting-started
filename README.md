@@ -187,6 +187,53 @@ and numbers for you, but will be the URL of your new app! Click on that link or
 copy and paste it into your browser to see your application live for the world
 to see.
 
+If you get an error like this it means Heroku did not like the Pipfile.lock and can be fixed with the steps below:
+
+```
+remote:        Your Pipfile.lock (4b00ee) is out of date. Expected: (1f555a).
+remote:        Aborting deploy.
+remote:  !     Push rejected, failed to compile Python app.
+remote: 
+remote:  !     Push failed
+remote: Verifying deploy...
+remote: 
+remote: !       Push rejected to secure-lake-12038.
+remote: 
+To https://git.heroku.com/secure-lake-12038.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/secure-lake-12038.git'
+```
+
+1. Go to the directory of your project create a virtual environment:
+
+```bash
+pipenv --python 3
+```
+
+2. Activate the virtual environment:
+
+```bash
+pipenv shell
+```
+
+3. Generate a fresh Pipfile.lock file:
+
+```bash
+pipenv lock
+```
+
+4. Add and commit this new Pipfile.lock to the git repo:
+
+```bash
+git add Pipfile.lock
+git commit -m "Generating fresh Pipfile.lock for Heroku deploy"
+```
+
+5. Now, if all went well, you are good to go! Deploy your app to Heroku:
+
+```bash
+git push heroku master
+```
 
 ## Making updates to your project
 
