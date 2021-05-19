@@ -195,11 +195,31 @@ Heroku, make a commit (`git add -A`, `git commit -m`) and then repeat the
 previous last step (`git push heroku master`).
 
 
-# Heroku Tips
+# Troubleshooting
 
-* By default, they pick a weird, random domain name, but you can customize it
-  later if you want to have a custom name, or even a purchased  domain name.
+* The terminal output from launching a similar project is found here:
+  <https://output.jsbin.com/vetomif/>
 
-* If you want to launch code to Heroku, it must be in a brand new commit. So,
-  whenever you want to relaunch to the world, you will need to create a new
-  commit.
+* **Disabling `collectstatic`:** For the purpose of launching this project, you
+  don't need the "collect static" command.
+    * *Error message:*
+        - ```You're using the staticfiles app without having set the STATIC_ROOT setting to a filesystem path.```
+    * *Solution:* Run the suggested command:
+        - `heroku config:set DISABLE_COLLECTSTATIC=1`
+    * *Background:*
+        - In other circumstances, you can configure this command to do various
+          processing to your static folder, including minifying or reducing the
+          size of CSS files, processing images and media, and also uploading
+          all these files to an optimized web server serivce, such as Amazon S3
+          for speedier load times. These optimizations are nice to have, but in
+          this case it's not necessary to use the command, which is why it's
+          safe for us to disable it.
+
+* **Customizing name:** By default, they pick a weird, random domain name, but
+  you can customize it later if you want to have a custom name, or even a
+  purchased  domain name.
+
+* **Making corrections:** If you want to launch code to Heroku, it must be in a
+  brand new commit. So, whenever you want to relaunch to the world, you will
+  need to create a new commit.
+
