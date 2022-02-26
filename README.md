@@ -170,7 +170,7 @@ git remote -v
 If all went well, you are good to go! Deploy your app to Heroku:
 
 ```bash
-git push heroku master
+git push heroku main
 ```
 
 If it's working, you should see text like "Python app detected", then
@@ -192,13 +192,19 @@ to see.
 
 As you work on your project, after every change that you want to test on
 Heroku, make a commit (`git add -A`, `git commit -m`) and then repeat the
-previous last step (`git push heroku master`).
+previous last step (`git push heroku main`).
 
 
 # Troubleshooting
 
+
 * The terminal output from launching a similar project is found here:
   <https://output.jsbin.com/vetomif/>
+  
+* **`main` vs `master`:** This guide is written assuming you are using a
+  project which calls the default branch "main". Some versions of git might
+  call the default branch "master", in which case you will have to use
+  `git push heroku master` instead of `git push heroku main`
 
 * **Disabling `collectstatic`:** For the purpose of launching this project, you
   don't need the "collect static" command.
